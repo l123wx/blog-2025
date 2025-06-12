@@ -27,4 +27,8 @@ export default defineNuxtConfig({
       }
     }
   },
+
+  ui: {
+    fonts: false
+  }
 })
