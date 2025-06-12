@@ -16,12 +16,15 @@ export default defineNuxtConfig({
       markdown: {
         toc: {
           depth: 3, // include h3 headings
+        },
+        highlight: {
+
+          // Theme used in all color schemes.
+          theme: 'github-light',
+          langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml'],
+          themes: ['github-light']
         }
       }
     }
   },
-
-  ui: {
-    fonts: false
-  }
 })
