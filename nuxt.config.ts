@@ -30,5 +30,14 @@ export default defineNuxtConfig({
 
   ui: {
     fonts: false
+  },
+
+  runtimeConfig: {
+    githubToken: process.env.GITHUB_TOKEN,
+    githubOwner: process.env.GITHUB_OWNER,
+    githubRepo: process.env.GITHUB_REPO,
+    public: {
+      // 公开的配置
+    }
   }
 })
