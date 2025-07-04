@@ -22,7 +22,7 @@
       <section>
         <h2 class="text-2xl font-bold mb-4">最新随笔</h2>
         <div class="space-y-4">
-          <NuxtLink to="/notes" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+          <NuxtLink to="/moments" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
             <h3 class="text-lg font-semibold">查看所有随笔 →</h3>
           </NuxtLink>
         </div>

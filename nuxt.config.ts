@@ -8,8 +8,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxtjs/mdc'
   ],
+
+  css: ['~/assets/css/main.css'],
 
   content: {
     build: {
