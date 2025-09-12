@@ -10,13 +10,15 @@ import { components } from "@/components/mdx-components"
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
-import rehypeHighlight from 'rehype-highlight';
+import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug';
-import 'highlight.js/styles/github-dark.min.css'
 import GiscusComments from "@/components/giscus-comments"
 import { GoToTop } from "@/components/go-to-top"
 import 'katex/dist/katex.min.css';
 import { config } from "@/lib/config";
+import { transform } from "@/lib/contentTransformer"
+
+// import './codeStyle.css'
 
 type BlogsPageProps = {
   params: Promise<{slug: string[]}>
@@ -25,12 +27,13 @@ type BlogsPageProps = {
 
 const options = {
   mdxOptions: {
-      remarkPlugins: [remarkGfm, remarkMath],
-      rehypePlugins: [
-        rehypeKatex,
-        rehypeHighlight,
-        rehypeSlug
-      ],
+    pageExtensions: ['mdx'],
+    remarkPlugins: [remarkGfm, remarkMath],
+    rehypePlugins: [
+      [rehypeKatex, {}],
+      rehypePrettyCode,
+      rehypeSlug
+    ],
   }
 }
 
@@ -98,6 +101,7 @@ export default async function BlogPage(props: BlogsPageProps) {
   }
 
   const toc = await getTableOfContents(blog.content)
+  // const content = transform(blog.content)
 
   return (
     <main className="relative py-6 max-w-full md:max-w-6xl mx-auto lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">

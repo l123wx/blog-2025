@@ -102,10 +102,12 @@ const components = {
     className,
     alt,
     ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("max-w-full rounded-md", className)} alt={alt} {...props} />
-  ),
+  }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img className={cn("max-w-full rounded-md", className)} alt={alt} {...props} />
+    )
+  },
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className="my-4 md:my-8" {...props} />
   ),
